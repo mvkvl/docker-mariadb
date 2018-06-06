@@ -29,6 +29,7 @@ Environment Variables can be passed to container with following methods:
 - as a variable from attached volume ( `host-env-dir:/opt/env:ro` ), here every file is named as EV and contains the value for given EV (see example on [GitHib](https://github.com/mvkvl/docker-mariadb))
 - as a docker secret ( only *mysql_root_user* and *mysql_root_password* secrets are supported )
 - */opt/scripts/env.sh* script sources all scripts from */opt/env* directory; here you can also set any needed environment variables or perform any additional initialization steps
+
 Supported environment variables are:
 - TZ
 - MYSQL_ROOT_USER
