@@ -31,10 +31,19 @@ exit_script() {
     EXIT_FLAG=1
 }
 
+# set system timezone (if TZ variable is set)
+if [ ! -z "$TZ" ]; then
+  echo "mariadb INFO  set system timezone to $TZ"
+  rm /etc/localtime                            && \
+  ln -s /usr/share/zoneinfo/$TZ /etc/localtime && \
+  echo $TZ > /etc/timezone;
+fi
+
 # on first run should initialize database
 if [ ! -f /var/lib/mysql/.initialized ]; then
   mysql_install_db
 fi
+
 
 service mysql start
 

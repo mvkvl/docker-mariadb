@@ -6,6 +6,7 @@ services:
     hostname: mariadb
     image: mvkvl/mariadb
     environment:
+        - TZ=Asia/Vladivostok
         - MYSQL_ROOT_USER=admin
     volumes:
         - ./container/conf:/etc/mysql/conf.d:ro
