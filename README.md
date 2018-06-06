@@ -1,5 +1,5 @@
 # docker-mariadb
-MariaDB Docker Image
+MariaDB Docker Image (get it [here](https://hub.docker.com/r/mvkvl/mariadb/))
 
 ## General Info
 - based on [bitnami/minideb](https://hub.docker.com/r/bitnami/minideb/)
@@ -13,11 +13,11 @@ For non-default MariaDB configuration you can attach a directory with configurat
 ## Data Persistance
 If you want your data to be stored outside the container, you can attach data directory as volume */var/lib/mysql*.
 
-## Database (Re)Initialization 
-On the first run system database is being initialized with *mysql_install_db* command. After this *.initialized* file is creted in data directory, which prevents the container from database initialization on next runs. If you need to reinitialize database, just remove this file. 
+## Database (Re)Initialization
+On the first run system database is being initialized with *mysql_install_db* command. After this *.initialized* file is creted in data directory, which prevents the container from database initialization on next runs. If you need to reinitialize database, just remove this file.
 
 ## Admin User
-Default *root* user has no password set and only allowed to connect from inside docker container (`mysql -u root mysql`). On the first run administrative user is being created with full database management rights and allowed remote access. User name and password can be passed to container via environment variables or secrets. 
+Default *root* user has no password set and only allowed to connect from inside docker container (`mysql -u root mysql`). On the first run administrative user is being created with full database management rights and allowed remote access. User name and password can be passed to container via environment variables or secrets.
 
 - MYSQL_ROOT_USER
 - MYSQL_ROOT_PASSWORD
@@ -34,4 +34,3 @@ Supported environment variables are:
 - TZ
 - MYSQL_ROOT_USER
 - MYSQL_ROOT_PASSWORD
-
