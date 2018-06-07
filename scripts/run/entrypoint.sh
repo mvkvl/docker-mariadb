@@ -69,7 +69,7 @@ trap exit_script SIGABRT
 trap exit_script SIGTERM
 
 while [ $EXIT_FLAG == 0 ]; do
-  :
+  sleep 1
   # #
   # # check running services and restart if needed
   # #
